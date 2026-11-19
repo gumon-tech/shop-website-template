@@ -333,7 +333,8 @@ if (homeHtml && !ldOf(homeHtml).some((j) => j["@type"] === BUSINESS_TYPE)) fail(
     const got = {};
     for (const spec of biz?.openingHoursSpecification ?? []) for (const d of spec.dayOfWeek) got[d] = `${spec.opens}-${spec.closes}`;
     const want = Object.fromEntries(DAYS.filter((d) => hours[d]).map((d) => [d, `${hours[d].opens}-${hours[d].closes}`]));
-    if (JSON.stringify(got) !== JSON.stringify(want)) fail(`/: ${BUSINESS_TYPE} openingHoursSpecification ${JSON.stringify(got)} differs from data/hours.json`);
+    const sorted = (o) => JSON.stringify(DAYS.filter((d) => d in o).map((d) => [d, o[d]]));
+    if (sorted(got) !== sorted(want)) fail(`/: ${BUSINESS_TYPE} openingHoursSpecification ${JSON.stringify(got)} differs from data/hours.json`);
   }
 
   // closures: live, not over, starting within 60 days: in the footer of every page and under the /visit/ table; every live one not over in JSON-LD.

@@ -16,7 +16,7 @@ Eyebrow: Treatments · {{group}}
 
 # Your Treatment
 
-Lead: What happens in this treatment, in plain words, and who it suits. No health or results claims.
+Lead: What happens in this treatment, in plain words, and who it suits. Describe it; do not promise results.
 
 ## options
 

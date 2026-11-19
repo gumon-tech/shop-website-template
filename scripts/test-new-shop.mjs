@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+const before = JSON.parse(readFileSync(path.join(root, "data/shop.json"), "utf8")).shopId;
 const example = JSON.parse(readFileSync(path.join(root, "examples/new-shop.example.json"), "utf8"));
 let failed = 0;
 const t = (name, ok, detail = "") => {
@@ -76,7 +77,7 @@ const bad = [
 ];
 for (const [name, brief] of bad) {
   const { dir, r, json } = newShop(brief);
-  t(`refused: ${name}`, r.status === 1 && json("data/shop.json").shopId === "example", r.stdout + r.stderr);
+  t(`refused: ${name}`, r.status === 1 && json("data/shop.json").shopId === before, r.stdout + r.stderr);
   rmSync(dir, { recursive: true, force: true });
 }
 
