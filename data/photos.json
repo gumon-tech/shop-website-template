@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-11-06T09:00:00Z",
+  "images": [],
+  "slots": {
+    "home.hero": null,
+    "home.our-story": null,
+    "home.gift": null,
+    "home.visit": null,
+    "about.hero": null,
+    "about.our-team": null,
+    "about.space-1": null,
+    "about.space-2": null,
+    "gift-vouchers.hero": null,
+    "visit.room": null
+  }
+}

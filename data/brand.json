@@ -1,0 +1,19 @@
+{
+  "_about": "Brand colours (hex) and logo. Design, changed by a person or scripts/new-shop.mjs, never by the shop system. The site derives nothing else from the brand: fonts and layout are the template's.",
+  "colors": {
+    "primary": "#3F4A5A",
+    "primary_deep": "#2B3340",
+    "primary_mid": "#56647A",
+    "primary_tint": "#E8ECF2",
+    "accent": "#B59A5B",
+    "accent_pale": "#E6D7AE",
+    "accent_deep": "#7A6230",
+    "cream": "#FBFAF7",
+    "sand": "#F2F0EA",
+    "stone": "#D9D6CC",
+    "ink": "#2C2C2C",
+    "ink_2": "#4A4A4A"
+  },
+  "logo": null,
+  "wordmark": null
+}

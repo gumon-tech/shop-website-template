@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+# Served from public/CNAME's domain at "/", or without a CNAME from https://<owner>.github.io/<repo>/ under "/<repo>":
+# scripts/lib/site-config.mjs reads GITHUB_REPOSITORY (set by Actions) and public/CNAME, so nothing here changes per shop.
+on:
+  push:
+    branches: [main]
+  # auto-merge-shop-agent.yml starts this by hand after a merge (a GITHUB_TOKEN merge does not fire `push`).
+  workflow_dispatch:
+  # Offers end at midnight shop time. For a UK shop rebuild just after it (23:10 UTC in summer, 00:10 UTC in winter) so an
+  # ended offer leaves the HTML too; the browser already hides it from the first second. Another timezone: change the two crons.
+  schedule:
+    - cron: "10 23 * * *"
+    - cron: "10 0 * * *"
+# Least privilege: the build job (npm) gets read only; only the deploy job may publish.
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false   # no token left in .git/config while npm runs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      # Every validator and its tests (see "validate" in package.json). A broken edit of data/services.json, or a bad
+      # offer, hours, closure, notice, question or photo written by the shop system, stops here and the live site stays as it was.
+      - name: Validate data files and run the validator tests
+        run: npm run validate
+      - name: Build
+        run: npx --no-install next build
+      # out/build.json: the commit and a hash of each shop-system data file; the shop system reads it to confirm "live".
+      - name: Write build.json
+        run: node scripts/write-build-json.mjs
+      - name: Check output
+        run: node scripts/check-site.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # GitHub's deploy step has stalled in updating_pages before (5 Nov 2026): bound it, and retry the deploy step once.
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment_retry.outputs.page_url || steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 360000
+      # One automatic retry, only of the deploy step (a build or check failure already stopped the build job above).
+      - id: deployment_retry
+        if: failure() && steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 360000

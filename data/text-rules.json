@@ -1,0 +1,6 @@
+{
+  "_about": "Shop-specific wording rules on top of scripts/lib/public-text.mjs (a person's change). short_name: a JavaScript regex (case-sensitive) that must never match public text, for a shop that is always written in full; null for none. never_words: words that must never appear in public text (for example a neighbouring business). old_number_fragments: fragments of a phone number the shop no longer uses. Exported to scripts/lib/public-text.json for the shop bot.",
+  "short_name": null,
+  "never_words": [],
+  "old_number_fragments": []
+}

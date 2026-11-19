@@ -1,0 +1,7 @@
+{
+  "shopId": "example",
+  "name": "Example Shop",
+  "country": "GB",
+  "timezone": "Europe/London",
+  "locale": "en-GB"
+}

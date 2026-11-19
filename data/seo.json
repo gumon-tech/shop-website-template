@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-11-19T09:00:00Z",
+  "pages": {
+    "/": {
+      "title": null,
+      "description": null
+    },
+    "/treatments/": {
+      "title": null,
+      "description": null
+    },
+    "/gift-vouchers/": {
+      "title": null,
+      "description": null
+    },
+    "/about/": {
+      "title": null,
+      "description": null
+    },
+    "/visit/": {
+      "title": null,
+      "description": null
+    },
+    "/faq/": {
+      "title": null,
+      "description": null
+    },
+    "/careers/": {
+      "title": null,
+      "description": null
+    }
+  }
+}

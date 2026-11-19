@@ -1,0 +1,7 @@
+{
+  "_about": "Every bookable service, one row per length. Row order is the order on the site. Adding a treatment (a new slug) is a person's change; the shop system may change prices and lengths of existing ones.",
+  "source": "Not set yet",
+  "read_at": "2026-11-19T00:00:00+00:00",
+  "currency": "GBP",
+  "services": []
+}

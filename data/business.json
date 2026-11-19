@@ -1,0 +1,17 @@
+{
+  "_about": "Facts about the shop that the site shows. null means not known yet: every part of the site that needs it is hidden until it is set. Written by scripts/new-shop.mjs or by a person in a pull request (not a shop-agent concern). Identity (name, timezone, locale) is in data/shop.json. Both are written by scripts/new-shop.mjs.",
+  "tagline": null,
+  "address": null,
+  "geo": null,
+  "phone": null,
+  "whatsapp": null,
+  "email": null,
+  "maps_url": null,
+  "deposit_gbp": null,
+  "indexable": false,
+  "business_type": "HealthAndBeautyBusiness",
+  "area_served": null,
+  "payment_accepted": null,
+  "privacy_updated": null,
+  "treatment_tags": {}
+}

@@ -1,0 +1,15 @@
+{
+  "_about": "Test fixture (scripts/test-services.mjs, scripts/test-workflow-rules.mjs): a made-up menu so the tests never depend on a shop's real data.",
+  "source": "Test fixture",
+  "read_at": "2026-11-19T09:00:00+00:00",
+  "currency": "GBP",
+  "services": [
+    { "group": "Massages", "slug": "classic-massage", "name": "Classic Massage", "option": "1 hour", "duration_min": 60, "price_gbp": 60 },
+    { "group": "Massages", "slug": "classic-massage", "name": "Classic Massage", "option": "90 minutes", "duration_min": 90, "price_gbp": 85 },
+    { "group": "Massages", "slug": "hot-stone-massage", "name": "Hot Stone Massage", "option": "1 hour", "duration_min": 60, "price_gbp": 70 },
+    { "group": "Massages", "slug": "hot-stone-massage", "name": "Hot Stone Massage", "option": "90 minutes", "duration_min": 90, "price_gbp": 95 },
+    { "group": "Gentle Treatments", "slug": "lymphatic-drainage-massage", "name": "Lymphatic Drainage Massage", "option": "1 hour", "duration_min": 60, "price_gbp": 65 },
+    { "group": "Gentle Treatments", "slug": "foot-massage", "name": "Foot Massage", "option": "30 minutes", "duration_min": 30, "price_gbp": 35 },
+    { "group": "Gentle Treatments", "slug": "foot-massage", "name": "Foot Massage", "option": "1 hour", "duration_min": 60, "price_gbp": 55 }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "_example": true,
+  "_about": "A filled example brief for scripts/new-shop.mjs. Every value is made up (020 7946 0xxx is a UK range kept for drama). Copy this file outside the repository, replace every value with the shop's own, delete _example and _about, then run: node scripts/new-shop.mjs <your copy>. Fields you do not know yet: leave them out or set them to null; the site hides what it does not know.",
+  "shopId": "lotus-thai-spa",
+  "name": "Lotus Thai Spa",
+  "country": "GB",
+  "timezone": "Europe/London",
+  "locale": "en-GB",
+  "languages": ["en-GB"],
+  "domain": null,
+  "tagline": "Thai massage in the heart of town.",
+  "phone": "+44 20 7946 0123",
+  "whatsapp": "same-as-phone",
+  "email": "hello@lotusthaispa.co.uk",
+  "address": { "street": "12 Market Street", "locality": "London", "region": "Greater London", "postal_code": "N1 9ZZ", "country": "GB" },
+  "geo": null,
+  "maps_url": "https://maps.app.goo.gl/AbCdEfGhIjKlMnOp9",
+  "hours": {
+    "Monday": "closed",
+    "Tuesday": "10:00-19:00",
+    "Wednesday": "10:00-19:00",
+    "Thursday": "10:00-20:00",
+    "Friday": "10:00-20:00",
+    "Saturday": "10:00-18:00",
+    "Sunday": "11:00-17:00"
+  },
+  "brand": { "primary": "#1F5C4A", "accent": "#C9A227" },
+  "wordmark": { "line1": "Lotus", "line2": "Thai Spa" },
+  "deposit_gbp": null,
+  "indexable": false,
+  "business_type": "DaySpa",
+  "area_served": "London",
+  "payment_accepted": "Cash, Credit Card, Debit Card",
+  "privacy_updated": "19 November 2026",
+  "treatment_tags": { "thai-massage": "PT" },
+  "services": [
+    { "group": "Massages", "name": "Thai Massage", "options": [{ "minutes": 60, "price": 55 }, { "minutes": 90, "price": 75 }] }
+  ],
+  "faq": [
+    { "question": "Is there parking near the shop?", "answer": "There is pay-and-display parking on the streets around the shop, and a car park a short walk away." }
+  ],
+  "promotions": [
+    {
+      "title": "Weekday Welcome",
+      "eyebrow": "New customers",
+      "detail": "Book a one-hour Thai Massage on a weekday and take £5 off your first visit.",
+      "points": ["New customers", "Weekdays"],
+      "starts": "2026-11-01",
+      "ends": "2027-12-31"
+    }
+  ],
+  "text_rules": { "short_name": null, "never_words": [], "old_number_fragments": [] }
+}
